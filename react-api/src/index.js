@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -12,7 +12,10 @@ ReactDOM.render(
 );
 
 function Button() {
-  return <button>TEST</button>
+  const [counter, setCounter] = useState(5);
+  return <button type="button" class="btn btn-primary" onClick={() => setCounter(counter * 2)}>
+    {counter}
+  </button>
 }
 
 // If you want your app to work offline and load faster, you can change
