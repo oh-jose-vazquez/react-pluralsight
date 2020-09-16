@@ -13,9 +13,12 @@ ReactDOM.render(
 
 function Button() {
   const [counter, setCounter] = useState(5);
-  return <button type="button" class="btn btn-primary" onClick={() => setCounter(counter * 2)}>
-    {counter}
-  </button>
+  const clickHandler = () => setCounter(counter * 2);
+  return (
+    <button type="button" class="btn btn-primary" onClick={clickHandler}>
+      {counter}
+    </button>
+  )
 }
 
 // If you want your app to work offline and load faster, you can change
