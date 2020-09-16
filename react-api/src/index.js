@@ -5,25 +5,29 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <App2 />,
+  <App2 />,
   document.getElementById('root')
 );
 
 function App2() {
   const [counter, setCounter] = useState(42);
-  const clickHandler = () => setCounter(counter + 1);
+  const clickHandler = (increment) => setCounter(counter + increment);
   return (
     <div>
-      <Button clickHandler={clickHandler} />
+      <Button clickHandler={clickHandler} increment={1} />
+      <Button clickHandler={clickHandler} increment={5} />
+      <Button clickHandler={clickHandler} increment={10} />
+      <Button clickHandler={clickHandler} increment={100} />
       <Display message={counter} />
     </div>
   )
 }
 
 function Button(props) {
+  const handleClick = () => props.clickHandler(props.increment);
   return (
-    <button type="button" class="btn btn-primary" onClick={props.clickHandler}>
-      +1
+    <button type="button" class="btn btn-primary" onClick={handleClick}>
+      +{props.increment}
     </button>
   )
 }
