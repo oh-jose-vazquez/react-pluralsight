@@ -2,6 +2,7 @@
 
 ## Prerequisites
  - node
+ - yarn
 
 ## Create app
 1. Install create-react-app
