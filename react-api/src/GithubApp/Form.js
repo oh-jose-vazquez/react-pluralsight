@@ -2,14 +2,24 @@ import React, { Component } from 'react'
 
 class Form extends Component {
 
+    userNameInput = React.createRef();
+
+    handleSubmit = (event) => {
+        event.preventDefault(); //<---- Avoid page refreshing when submit the form
+        console.log(this.userNameInput.current.value);
+    };
+
     render() {
         return (
-            <div className="input-group mb-3 d-flex justify-content-center">
-                <input type="text" className="form-control col-4" placeholder="Username"></input>
-                <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" type="button">Add</button>
+            <form onSubmit={this.handleSubmit}>
+                <div className="input-group mb-3 d-flex justify-content-center">
+                    <input type="text" className="form-control col-4" placeholder="Username" ref={this.userNameInput} required></input>
+                    <div className="input-group-append">
+                        <button className="btn btn-outline-secondary" type="submit">Add</button>
+                    </div>
+
                 </div>
-            </div>
+            </form>
         )
     }
 }
