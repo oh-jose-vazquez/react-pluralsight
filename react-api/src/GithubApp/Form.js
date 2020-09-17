@@ -25,7 +25,8 @@ class Form extends Component {
                 }
                 this.props.onSubmit(profileData);
                 this.setState({
-                    userName: ''
+                    userName: '',
+                    submitted: false
                 });
             } catch(error) {
                 
