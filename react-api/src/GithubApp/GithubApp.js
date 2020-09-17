@@ -22,13 +22,19 @@ const testData = [
 
 class GithubApp extends Component {
 
+    state = {
+        profiles: testData
+    };
+
+    addNewProfile = (profileData) => { console.log(profileData) };
+
     render() {
         return (
             <div className="container">
                 <h1 className="text-center">GithubApp</h1>
-                <Form />
+                <Form onSubmit={this.addNewProfile} />
                 <hr />
-                <CardList data={testData}/>
+                <CardList data={this.state.profiles} />
             </div>
         )
     }
