@@ -8,12 +8,12 @@ class Card extends Component {
 
     render() {
         return (
-            <div className="card mb-3 col-4">
+            <div className="card mb-3 col-md-4 col-10">
                 <div className="row no-gutters">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-4">
                         <img src={this.props.imageUrl} className="card-img" alt={this.props.name}></img>
                     </div>
-                    <div className="col-md-8">
+                    <div className="col-md-8 col-8">
                         <div className="card-body">
                             <h5 className="card-title">{this.props.name}</h5>
                             <p className="card-text">
